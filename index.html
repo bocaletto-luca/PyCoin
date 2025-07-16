@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PyCoin – Python‐Powered Cryptocurrency by Bocaletto Luca</title>
+  <meta name="description" content="PyCoin is a lightweight, Python-native cryptocurrency built for education and rapid consensus experimentation. Clone, run your own node, and explore the future of blockchain in pure Python." />
+  <meta name="keywords" content="PyCoin, cryptocurrency, blockchain, Python, PoW, P2P, FastAPI, ECDSA, open source" />
+  <meta name="author" content="Bocaletto Luca" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="PyCoin – Python‐Powered Cryptocurrency" />
+  <meta property="og:description" content="A lightweight, Python-native blockchain for education and rapid experimentation. Start mining in minutes!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bocaletto-luca.github.io/pycoin/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/bocaletto-luca/pycoin/main/docs/pycoin-banner.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@bocaletto_luca" />
+  <meta name="twitter:title" content="PyCoin – Python‐Powered Cryptocurrency" />
+  <meta name="twitter:description" content="Run your own pure-Python blockchain, experiment with consensus, and build the future of crypto." />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles */
+    .btn-primary {
+      @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded;
+    }
+    .btn-secondary {
+      @apply bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 leading-relaxed">
+
+  <!-- Header / Hero -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row items-center">
+      <div class="flex-1">
+        <h1 class="text-4xl font-bold mb-4">PyCoin</h1>
+        <p class="mb-6 text-lg">
+          A pure-Python, educational cryptocurrency.  
+          Build, mine, and explore blockchain fundamentals with ease.
+        </p>
+        <div class="space-x-4">
+          <a href="#features" class="btn-primary">Learn More</a>
+          <a href="https://github.com/bocaletto-luca/pycoin" target="_blank" class="btn-secondary">View Source on GitHub</a>
+        </div>
+      </div>
+      <div class="mt-6 md:mt-0">
+        <img src="https://raw.githubusercontent.com/bocaletto-luca/pycoin/main/docs/pycoin-hero.svg"
+             alt="PyCoin Illustration"
+             class="w-64 mx-auto"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-12 space-y-16">
+
+    <!-- Features Section -->
+    <section id="features">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold mb-2">Pure Python Core</h3>
+          <p>Implement blockchain logic, Proof-of-Work, and transactions in under 300 lines of code.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold mb-2">Modular Consensus</h3>
+          <p>Experiment with Proof-of-Work, integrate Proof-of-Stake, or design your own protocol.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold mb-2">FastAPI REST API</h3>
+          <p>Query chain data, submit transactions, and trigger mining via a lightning-fast HTTP interface.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold mb-2">P2P Networking</h3>
+          <p>Synchronize multiple nodes over WebSocket gossip for a true decentralized experience.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold mb-2">ECDSA Wallet</h3>
+          <p>Generate and manage secp256k1 key-pairs for secure, signed transactions.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold mb-2">CLI Tooling</h3>
+          <p>Manage wallets and run nodes effortlessly with a Typer-based command-line interface.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold mb-2">Block Explorer</h3>
+          <p>Browse your blockchain in the browser—inspect blocks, transactions, and addresses.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-bold mb-2">Docker-Ready</h3>
+          <p>Launch multi-node networks in seconds with Docker Compose for testing and demos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+      <h2 class="text-3xl font-semibold mb-6 text-center">How It Works</h2>
+      <ol class="list-decimal list-inside space-y-4 bg-white p-8 rounded-lg shadow">
+        <li><strong>Create Blockchain Core:</strong> Blocks store transactions, previous hash & nonce. Mining solves SHA-256 puzzles.</li>
+        <li><strong>Generate Wallet:</strong> ECDSA secp256k1 key-pairs secure your funds and sign transactions.</li>
+        <li><strong>Broadcast Transactions:</strong> Submit via REST or P2P—mempool holds pending transfers.</li>
+        <li><strong>Mine New Blocks:</strong> Use “/mine” endpoint or CLI to earn PyCoin reward and validate transactions.</li>
+        <li><strong>Sync Peers:</strong> Nodes gossip blocks & transactions over WebSocket for consensus.</li>
+      </ol>
+    </section>
+
+    <!-- Quickstart -->
+    <section id="quickstart" class="bg-white p-8 rounded-lg shadow">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Quickstart</h2>
+      <pre class="bg-gray-800 text-gray-100 p-4 rounded overflow-auto"><code>
+# Clone the repo
+git clone https://github.com/bocaletto-luca/pycoin.git
+cd pycoin
+
+# Setup environment
+python3 -m venv .venv
+source .venv/bin/activate     # macOS/Linux
+.\.venv\Scripts\activate      # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Generate wallet
+python cli.py create-wallet --password "YOUR_PASSWORD"
+
+# Run P2P node
+python pycoin/node.py
+
+# Start API server
+uvicorn pycoin.api:app --reload --port 8000
+      </code></pre>
+    </section>
+
+    <!-- Source & Contribute -->
+    <section id="source" class="text-center space-y-4">
+      <h2 class="text-3xl font-semibold">Get the Source</h2>
+      <p>Ready to dive in? Browse the full code, contribute issues, or submit pull requests.</p>
+      <a href="https://github.com/bocaletto-luca/pycoin" target="_blank"
+         class="btn-primary inline-block">View on GitHub</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-6">
+    <div class="container mx-auto px-6 text-center space-y-2">
+      <p>© 2025 PyCoin • Built &amp; Maintained by Bocaletto Luca</p>
+      <p>
+        <a href="https://github.com/bocaletto-luca" target="_blank" class="underline">GitHub: bocaletto-luca</a> •
+        <a href="mailto:bocaletto.luca@example.com" class="underline">Contact Me</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
