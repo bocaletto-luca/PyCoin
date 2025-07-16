@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PyCoin Explorer</title>
+  <script>
+    async function loadChain() {
+      const res = await fetch('http://localhost:8000/chain');
+      const data = await res.json();
+      const container = document.getElementById('chain');
+      container.innerHTML = data.chain.map(b => `
+        <div class="block">
+          <h3>Block #${b.index}</h3>
+          <p>Hash: ${b.hash || b.previous_hash}</p>
+          <p>Time: ${new Date(b.timestamp * 1000).toLocaleString()}</p>
+          <pre>${JSON.stringify(b.transactions, null, 2)}</pre>
+        </div>
+      `).join('');
+    }
+    window.onload = loadChain;
+  </script>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    .block { border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>PyCoin Block Explorer</h1>
+  <div id="chain">Loading...</div>
+</body>
+</html>
