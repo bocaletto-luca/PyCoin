@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+cryptography
+typer[all]
+websockets
+pytest
+httpx
+flake8
+black

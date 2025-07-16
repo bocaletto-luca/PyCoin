@@ -1,0 +1,19 @@
+pycoin/
+├── docs/                   
+│   └── whitepaper.md      
+├── pycoin/                
+│   ├── __init__.py        
+│   ├── blockchain.py      # Block & Chain + PoW
+│   ├── transaction.py     # Transaction model + firma/verifica
+│   ├── wallet.py          # Generazione coppie chiavi ECDSA
+│   ├── node.py            # P2P networking (asyncio + websockets)
+│   └── api.py             # REST API con FastAPI
+├── cli.py                 # CLI con Typer
+├── tests/                 
+│   ├── test_blockchain.py 
+│   ├── test_transaction.py
+│   └── test_wallet.py     
+├── Dockerfile             
+├── docker-compose.yml     
+├── README.md              
+└── requirements.txt       
